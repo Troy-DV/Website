@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concept 6 — Hybrid + Living Build Log</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root{
+  --paper:#F7F4EC;--paper-2:#FFFDF7;--navy:#060F20;--navy-2:#0B1830;--line-d:#1B2A47;
+  --gold:#C9952E;--gold-bright:#E3B347;--muted:#5A6478;--muted-d:#8B97AC;--hairline:#E2DCCB;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--navy);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Newsreader',serif}
+.mono{font-family:'IBM Plex Mono',monospace}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:24px 56px;max-width:1280px;margin:0 auto}
+.wordmark{font-family:'Newsreader',serif;font-weight:500;font-size:19px}
+.wordmark b{color:var(--gold)}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{color:var(--navy);text-decoration:none;font-size:14px}
+.btn{background:var(--navy);color:var(--paper);padding:11px 22px;border-radius:999px;font-weight:500;font-size:14px;text-decoration:none}
+.btn em{font-style:normal;color:var(--gold-bright)}
+
+.hero{max-width:1180px;margin:0 auto;padding:80px 56px 64px;display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:24px;display:flex;align-items:center;gap:14px}
+.eyebrow::after{content:'';flex:0 0 56px;height:1px;background:var(--gold)}
+h1{font-family:'Newsreader',serif;font-weight:500;font-size:54px;line-height:1.1;letter-spacing:-.015em}
+h1 .it{font-style:italic;color:var(--gold)}
+.hero p{color:var(--muted);font-size:17px;line-height:1.7;margin:24px 0 34px;max-width:48ch}
+.cta-row{display:flex;gap:14px}
+.btn-ghost{color:var(--navy);text-decoration:none;font-size:14px;font-weight:500;padding:11px 20px;border:1px solid #CFC8B4;border-radius:999px}
+.btn-ghost:hover{border-color:var(--gold)}
+
+.core{background:var(--navy);border-radius:20px;box-shadow:0 28px 70px rgba(6,15,32,.22);overflow:hidden;border:1px solid var(--navy-2)}
+.core-head{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;border-bottom:1px solid var(--line-d)}
+.core-head .t{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--muted-d);text-transform:uppercase}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--gold-bright);box-shadow:0 0 0 0 rgba(227,179,71,.5);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(227,179,71,.45)}70%{box-shadow:0 0 0 9px rgba(227,179,71,0)}100%{box-shadow:0 0 0 0 rgba(227,179,71,0)}}
+.core-body{padding:22px;display:flex;flex-direction:column;gap:14px}
+.sys{display:flex;align-items:center;gap:14px;background:var(--navy-2);border:1px solid var(--line-d);border-radius:10px;padding:14px 16px}
+.sys .dot{width:7px;height:7px;border-radius:50%;background:var(--gold-bright);flex-shrink:0}
+.sys .dot.amber{background:transparent;border:1.5px solid var(--gold-bright)}
+.sys .name{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#E8E4D8;letter-spacing:.06em;flex:1}
+.sys .st{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted-d);letter-spacing:.1em;text-transform:uppercase}
+
+.work{max-width:1180px;margin:0 auto;padding:16px 56px 80px}
+.work h2{font-family:'Newsreader',serif;font-weight:500;font-size:38px;margin-bottom:40px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--paper-2);border:1px solid var(--hairline);border-radius:18px;padding:32px 28px;transition:all .28s ease;cursor:pointer}
+.card .label{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.card h3{font-family:'Newsreader',serif;font-weight:500;font-size:24px;margin:14px 0 10px}
+.card p{color:var(--muted);font-size:14.5px;line-height:1.65}
+.card .go{margin-top:22px;font-size:13px;font-weight:600}
+.card .go span{color:var(--gold)}
+.card:hover{background:var(--navy);border-color:var(--navy);transform:translateY(-4px);box-shadow:0 22px 50px rgba(6,15,32,.25)}
+.card:hover h3,.card:hover .go{color:var(--paper)}
+.card:hover p{color:var(--muted-d)}
+.card:hover .label,.card:hover .go span{color:var(--gold-bright)}
+
+/* ===== Living Build Log ===== */
+.buildlog{background:var(--paper-2);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+.bl-inner{max-width:1180px;margin:0 auto;padding:88px 56px}
+.bl-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:48px}
+.bl-head h2{font-family:'Newsreader',serif;font-weight:500;font-size:38px}
+.bl-head h2 .it{font-style:italic;color:var(--gold)}
+.bl-head .all{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);text-decoration:none;letter-spacing:.1em}
+.bl-head .all b{color:var(--gold)}
+.timeline{position:relative;padding-left:36px}
+.timeline::before{content:'';position:absolute;left:7px;top:8px;bottom:8px;width:1.5px;background:var(--hairline)}
+.tl-entry{position:relative;padding:0 0 40px}
+.tl-entry:last-child{padding-bottom:0}
+.tl-entry::before{content:'';position:absolute;left:-36px;top:6px;width:15px;height:15px;border-radius:50%;background:var(--gold-bright);border:3.5px solid var(--paper-2);box-shadow:0 0 0 1.5px var(--gold)}
+.tl-entry.wip::before{background:var(--paper-2);box-shadow:0 0 0 1.5px var(--gold);animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{0%,100%{box-shadow:0 0 0 1.5px var(--gold)}50%{box-shadow:0 0 0 4px rgba(227,179,71,.35)}}
+.tl-meta{display:flex;gap:14px;align-items:center;margin-bottom:8px}
+.tl-date{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+.tl-tag{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:3px 9px;border-radius:4px;border:1px solid var(--hairline);color:var(--muted)}
+.tl-tag.ship{border-color:var(--gold);color:var(--gold);background:rgba(227,179,71,.08)}
+.tl-tag.wip-tag{border-color:var(--gold);color:var(--gold)}
+.tl-entry h3{font-family:'Newsreader',serif;font-weight:500;font-size:23px;margin-bottom:8px}
+.tl-entry p{color:var(--muted);font-size:14.5px;line-height:1.65;max-width:72ch}
+.tl-entry .stack{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);border:1px solid var(--hairline);border-radius:4px;padding:3px 9px;background:var(--paper)}
+
+footer{max-width:1280px;margin:0 auto;padding:36px 56px;display:flex;justify-content:space-between;color:var(--muted);font-size:13px}
+@media(max-width:900px){nav{padding:20px 24px}.nav-links a:not(.btn){display:none}.hero{grid-template-columns:1fr;padding:48px 24px;gap:44px}h1{font-size:38px}.work{padding:8px 24px 56px}.cards{grid-template-columns:1fr}.bl-inner{padding:64px 24px}.bl-head{flex-direction:column;gap:10px;align-items:flex-start}}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="wordmark">Troy De Vries<b>.</b></span>
+  <div class="nav-links">
+    <a href="#">Work</a><a href="#">Build Log</a><a href="#">About</a>
+    <a href="#" class="btn">Let's talk <em>&rarr;</em></a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">Operations &times; AI Systems</div>
+    <h1>The operator who <span class="it">builds</span> the tools.</h1>
+    <p>Ten years leading teams taught me where operations breaks down. Teaching myself to build AI agents and automations taught me how to fix it for good.</p>
+    <div class="cta-row">
+      <a href="#" class="btn">See the work <em>&rarr;</em></a>
+      <a href="#" class="btn-ghost">Read the build log</a>
+    </div>
+  </div>
+  <div class="core">
+    <div class="core-head"><span class="t">Systems &middot; Live</span><span class="pulse"></span></div>
+    <div class="core-body">
+      <div class="sys"><span class="dot"></span><span class="name">ignite-agent</span><span class="st">running &middot; railway</span></div>
+      <div class="sys"><span class="dot"></span><span class="name">daily-research-cron</span><span class="st">next run 8:00 ET</span></div>
+      <div class="sys"><span class="dot"></span><span class="name">vault-sync</span><span class="st">pushed 14m ago</span></div>
+      <div class="sys"><span class="dot amber"></span><span class="name">troydevries.com</span><span class="st">in development</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="work">
+  <h2>Selected work</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="label">AI Agent</div><h3>Ignite</h3>
+      <p>An autonomous agent with multi-model routing, daily research sweeps, and a synced knowledge vault. Slack in, results out, every morning at 8.</p>
+      <div class="go">Read the build <span>&rarr;</span></div>
+    </div>
+    <div class="card">
+      <div class="label">RevOps</div><h3>Pipeline operations</h3>
+      <p>HubSpot and Looker workflows turning raw membership data into routing rules, retention flags, and a cadence the team follows.</p>
+      <div class="go">Read the build <span>&rarr;</span></div>
+    </div>
+    <div class="card">
+      <div class="label">Web</div><h3>Page one, no agency</h3>
+      <p>Designed, built, and ranked a local business site to the first page of Google with structured content and AI-assisted SEO.</p>
+      <div class="go">Read the build <span>&rarr;</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="buildlog">
+  <div class="bl-inner">
+    <div class="bl-head">
+      <h2>Build log <span class="it">&mdash; always shipping</span></h2>
+      <a href="#" class="all">FULL CHANGELOG <b>&rarr;</b></a>
+    </div>
+    <div class="timeline">
+      <div class="tl-entry wip">
+        <div class="tl-meta"><span class="tl-date">Now &middot; June 2026</span><span class="tl-tag wip-tag">In Progress</span></div>
+        <h3>troydevries.com</h3>
+        <p>This site. Built from scratch with Claude Code orchestrating Fable, Opus, and Sonnet subagents. The build itself is the case study, and I'm documenting every stage here.</p>
+        <div class="stack"><span class="chip">next.js</span><span class="chip">tailwind</span><span class="chip">claude code</span><span class="chip">vercel</span></div>
+      </div>
+      <div class="tl-entry">
+        <div class="tl-meta"><span class="tl-date">May 2026</span><span class="tl-tag ship">Shipped</span></div>
+        <h3>Ignite: daily research automation</h3>
+        <p>Added scheduled cron workflows with 25 automated research queries delivered to Slack at 8am ET. Tuned spend caps and fixed subagent auto-approval in cron context.</p>
+        <div class="stack"><span class="chip">openrouter</span><span class="chip">tavily</span><span class="chip">cron</span></div>
+      </div>
+      <div class="tl-entry">
+        <div class="tl-meta"><span class="tl-date">Apr 2026</span><span class="tl-tag ship">Shipped</span></div>
+        <h3>Ignite v1: agent goes live</h3>
+        <p>Deployed the full agent on Railway with Slack as the interface, multi-model routing, and an Obsidian knowledge vault synced to GitHub.</p>
+        <div class="stack"><span class="chip">railway</span><span class="chip">slack</span><span class="chip">github</span></div>
+      </div>
+      <div class="tl-entry">
+        <div class="tl-meta"><span class="tl-date">2025</span><span class="tl-tag ship">Shipped</span></div>
+        <h3>Page one Google ranking</h3>
+        <p>Built and ranked a local business website to the first page of Google using structured content and AI-assisted SEO. No agency, no ad spend.</p>
+        <div class="stack"><span class="chip">seo</span><span class="chip">content</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>&copy; 2026 Troy De Vries &middot; Knoxville, TN</span>
+  <span>LinkedIn &middot; GitHub &middot; Email</span>
+</footer>
+
+</body>
+</html>

@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Color tokens extracted from concept-6-hybrid-buildlog.html */
+  --color-paper: #f7f4ec;
+  --color-paper-2: #fffdf7;
+  --color-navy: #060f20;
+  --color-navy-2: #0b1830;
+  --color-line-d: #1b2a47;
+  --color-gold: #c9952e;
+  --color-gold-bright: #e3b347;
+  --color-muted: #5a6478;
+  --color-muted-d: #8b97ac;
+  --color-hairline: #e2dccb;
+
+  /* Font tokens wired to next/font CSS variables */
+  --font-serif: var(--font-newsreader);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-ibm-plex-mono);
+
+  /* Single design breakpoint, matching the HTML's max-width:900px query */
+  --breakpoint-wide: 900px;
+
+  /* Animations recreated from the HTML keyframes */
+  --animate-pulse-ring: pulse-ring 2s infinite;
+  --animate-blink: blink 1.6s ease-in-out infinite;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(227, 179, 71, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 9px rgba(227, 179, 71, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(227, 179, 71, 0);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes blink {
+  0%,
+  100% {
+    box-shadow: 0 0 0 1.5px var(--color-gold);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(227, 179, 71, 0.35);
+  }
 }
