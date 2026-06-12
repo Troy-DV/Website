@@ -15,7 +15,7 @@ const entries: Entry[] = [
     tag: "In Progress",
     status: "wip",
     title: "troydevries.com",
-    body: "This site. Built from scratch with Claude Code orchestrating Fable, Opus, and Sonnet subagents. The build itself is the case study, and I'm documenting every stage here.",
+    body: "This site. Built from scratch with Claude Code (Opus), directed and refined by me. The build itself is the case study, documented stage by stage here.",
     stack: ["next.js", "tailwind", "claude code", "vercel"],
   },
   {
@@ -49,9 +49,7 @@ export default function BuildLog() {
     <section className="bg-paper-2 border-t border-b border-hairline">
       <div className="max-w-[1180px] mx-auto px-6 py-16 wide:px-14 wide:py-[88px]">
         <div className="flex flex-col items-start gap-[10px] mb-12 wide:flex-row wide:items-baseline wide:justify-between">
-          <h2 className="font-serif font-medium text-[38px]">
-            Build log <span className="italic text-gold">— always shipping</span>
-          </h2>
+          <h2 className="font-serif font-medium text-[38px]">Build log</h2>
           <Link
             href="/blog"
             className="font-mono text-xs text-muted no-underline tracking-[0.1em]"

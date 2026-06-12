@@ -15,7 +15,7 @@ const projects: Project[] = [
   {
     label: "AI Dev",
     title: "This site",
-    body: "Built from scratch using Claude Code with multi-model orchestration. The build itself is the case study: Next.js, Tailwind, Vercel, and the process documented in the build log.",
+    body: "Built with Claude Code (Opus), directed and refined by me. The build itself is the case study: Next.js, Tailwind, Vercel, documented in the build log.",
   },
   {
     label: "Web",

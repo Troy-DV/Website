@@ -24,7 +24,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Troy De Vries — Operations × AI Systems",
+  title: "Troy De Vries, Operations × AI Systems",
   description:
     "The operator who builds the tools. Ten years leading teams, now building AI agents and automations.",
 };
