@@ -195,11 +195,13 @@ function MinorRow({
   return (
     <div className="relative pb-10 last:pb-0">
       <span className="absolute left-[-33px] top-[5px] w-[9px] h-[9px] rounded-full bg-gold" />
-      <div className="flex flex-wrap items-center gap-[14px]">
-        <span className="font-mono text-[11.5px] text-muted tracking-[0.12em] uppercase">
-          {entry.date}
-        </span>
-        <span className={projectTagPill}>{projectLabel}</span>
+      <div className="flex flex-col gap-[6px]">
+        <div className="flex flex-wrap items-center gap-[14px]">
+          <span className="font-mono text-[11.5px] text-muted tracking-[0.12em] uppercase">
+            {entry.date}
+          </span>
+          <span className={projectTagPill}>{projectLabel}</span>
+        </div>
         <span className="text-muted text-[14.5px] leading-[1.65]">
           {entry.text}
         </span>
