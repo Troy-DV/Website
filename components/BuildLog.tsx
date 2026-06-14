@@ -51,7 +51,7 @@ export default function BuildLog() {
         <div className="flex flex-col items-start gap-[10px] mb-12 wide:flex-row wide:items-baseline wide:justify-between">
           <h2 className="font-serif font-medium text-[38px]">Build log</h2>
           <Link
-            href="/blog"
+            href="/work"
             className="font-mono text-xs text-muted no-underline tracking-[0.1em]"
           >
             FULL CHANGELOG <span className="text-gold">→</span>

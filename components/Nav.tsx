@@ -14,12 +14,6 @@ export default function Nav() {
           Work
         </Link>
         <Link
-          href="/blog"
-          className="hidden wide:inline text-navy text-sm no-underline"
-        >
-          Build Log
-        </Link>
-        <Link
           href="/about"
           className="hidden wide:inline text-navy text-sm no-underline"
         >

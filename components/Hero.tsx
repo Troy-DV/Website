@@ -37,7 +37,7 @@ export default function Hero() {
             See the work <span className="text-gold-bright">→</span>
           </Link>
           <Link
-            href="/blog"
+            href="/work"
             className="text-navy no-underline text-sm font-medium px-5 py-[11px] border border-[#cfc8b4] rounded-full hover:border-gold"
           >
             Read the build log
