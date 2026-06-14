@@ -4,15 +4,6 @@ export default function Footer() {
       <span>© 2026 Troy De Vries · Knoxville, TN</span>
       <span className="flex gap-[6px]">
         <a
-          href="https://www.linkedin.com/in/troy-de-vries-141599411/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-muted no-underline hover:text-gold"
-        >
-          LinkedIn
-        </a>
-        <span>·</span>
-        <a
           href="https://github.com/Troy-DV"
           target="_blank"
           rel="noopener noreferrer"
