@@ -11,7 +11,7 @@ type Props = {
 const ALL = "all";
 
 const chipBase =
-  "font-mono text-[13px] tracking-[0.04em] px-[18px] py-2.5 rounded-full transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-paper";
+  "inline-flex items-center gap-[8px] font-mono text-[13px] tracking-[0.04em] px-[18px] py-2.5 rounded-full transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-paper";
 const chipActive = "bg-navy text-paper";
 const chipInactive = "border border-hairline text-navy hover:border-gold";
 
@@ -35,6 +35,18 @@ export default function WorkTimeline({ projects, entries }: Props) {
           count === 1 ? "update" : "updates"
         }`;
 
+  const countFor = (slug: string) =>
+    entries.filter((e) => e.project === slug).length;
+
+  const chips = [
+    { key: ALL, label: "All", count: entries.length },
+    ...projects.map((p) => ({
+      key: p.slug,
+      label: p.label,
+      count: countFor(p.slug),
+    })),
+  ];
+
   return (
     <div>
       <div className="font-mono text-[10.5px] tracking-[0.2em] uppercase text-gold mb-3">
@@ -46,27 +58,32 @@ export default function WorkTimeline({ projects, entries }: Props) {
         aria-label="Filter updates by project"
         className="flex flex-wrap gap-[10px]"
       >
-        <button
-          type="button"
-          onClick={() => setActive(ALL)}
-          aria-pressed={active === ALL}
-          className={`${chipBase} ${active === ALL ? chipActive : chipInactive}`}
-        >
-          All
-        </button>
-        {projects.map((p) => (
-          <button
-            key={p.slug}
-            type="button"
-            onClick={() => setActive(p.slug)}
-            aria-pressed={active === p.slug}
-            className={`${chipBase} ${
-              active === p.slug ? chipActive : chipInactive
-            }`}
-          >
-            {p.label}
-          </button>
-        ))}
+        {chips.map((chip) => {
+          const isActive = active === chip.key;
+          return (
+            <button
+              key={chip.key}
+              type="button"
+              onClick={() => setActive(chip.key)}
+              aria-pressed={isActive}
+              className={`${chipBase} ${isActive ? chipActive : chipInactive}`}
+            >
+              <span
+                className={`w-[7px] h-[7px] rounded-full shrink-0 ${
+                  isActive ? "bg-gold-bright" : "bg-gold"
+                }`}
+              />
+              <span>{chip.label}</span>
+              <span
+                className={`text-[10px] leading-none px-[6px] py-[2px] rounded-full min-w-[16px] text-center ${
+                  isActive ? "bg-paper/15 text-paper" : "bg-muted/15 text-muted"
+                }`}
+              >
+                {chip.count}
+              </span>
+            </button>
+          );
+        })}
       </div>
 
       <p

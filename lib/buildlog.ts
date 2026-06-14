@@ -30,6 +30,7 @@ export const projects: Project[] = [
   { slug: "site", label: "troydevries.com" },
   { slug: "ignite", label: "Ignite" },
   { slug: "pageone", label: "Page one" },
+  { slug: "foundations", label: "Foundations" },
 ];
 
 // Pre-ordered newest first.
@@ -41,9 +42,15 @@ export const entries: Entry[] = [
     date: "Now · Jun 2026",
     title: "troydevries.com",
     description:
-      "Built from scratch with Claude Code, directed and refined by me. The build itself is the case study, documented stage by stage here.",
+      "Built from scratch with Claude Code, directed and refined by me. I set up the whole stack myself: a Next.js app in TypeScript and Tailwind, on GitHub, deployed to Vercel with continuous deployment, on a domain whose DNS I configured. The design started as a spec I shaped, then I directed the build, reviewed the output, and fixed what was off. This page is part of it: an interactive build log where each project is a thread you can pull.",
     tags: ["next.js", "tailwind", "vercel"],
     href: null,
+  },
+  {
+    type: "minor",
+    project: "site",
+    date: "Jun 2026",
+    text: "Shipped the interactive Work and Build Log page, a timeline you can filter by project.",
   },
   {
     type: "minor",
@@ -55,24 +62,60 @@ export const entries: Entry[] = [
     type: "minor",
     project: "site",
     date: "Jun 2026",
-    text: "Added the TD monogram favicon and tidied the site copy.",
+    text: "Added the TD monogram favicon and tidied the copy.",
+  },
+  {
+    type: "minor",
+    project: "site",
+    date: "Jun 2026",
+    text: "Took a Next.js scaffold to a full homepage, design system, and component library, then deployed to Vercel with the domain connected through Namecheap DNS.",
   },
   {
     type: "major",
     project: "ignite",
     status: "shipped",
     date: "May 2026",
-    title: "Ignite: daily research",
+    title: "Ignite",
     description:
-      "Scheduled cron sweeps deliver 25 research queries to Slack every morning at 8am ET.",
-    tags: ["openrouter", "tavily", "cron"],
+      "An autonomous agent I built to take research and repetitive work off my plate. It runs on Railway with Slack as the interface, routes across models through OpenRouter to keep costs in check, and uses a private Obsidian vault synced to GitHub as its memory. Every morning a cron job runs a batch of web research and drops the results in Slack.",
+    tags: ["railway", "slack", "openrouter", "tavily"],
     href: null,
   },
   {
     type: "minor",
     project: "ignite",
+    date: "May 2026",
+    text: "Added autonomous daily research, a cron job that runs 25+ web queries every morning at 8am ET and delivers them to Slack with no trigger needed.",
+  },
+  {
+    type: "minor",
+    project: "ignite",
+    date: "May 2026",
+    text: "Built a reusable skill-file system so the agent loads task instructions on demand instead of carrying them all in the base prompt.",
+  },
+  {
+    type: "minor",
+    project: "ignite",
     date: "Apr 2026",
-    text: "Ignite v1 went live on Railway with Slack as the interface.",
+    text: "Connected a private GitHub repo as the agent's memory through the GitHub Contents API, so its notes survive restarts and work from any session.",
+  },
+  {
+    type: "minor",
+    project: "ignite",
+    date: "Apr 2026",
+    text: "Wired Tavily for web search and routed model calls through OpenRouter with Claude Sonnet as default, so it can search and switch models without changing the stack.",
+  },
+  {
+    type: "minor",
+    project: "ignite",
+    date: "Apr 24 2026",
+    text: "Ignite v1 went live on Railway. Built the Slack app from scratch (OAuth, bot token, event subscriptions, signing secret) so Slack is the full interface, no frontend needed.",
+  },
+  {
+    type: "minor",
+    project: "ignite",
+    date: "Early 2026",
+    text: "Researched the agent landscape and chose Hermes as the base, after weighing the major hosted models against open-weight options like Qwen3.5-9b, and testing OpenRouter routing, Nous Portal, and AgentSkills.io.",
   },
   {
     type: "major",
@@ -81,8 +124,25 @@ export const entries: Entry[] = [
     date: "2025",
     title: "Page one, no agency",
     description:
-      "Ranked a local business site to the first page of Google with structured content and AI-assisted SEO.",
-    tags: ["seo", "content"],
+      "Ranked a local business site to the first page of Google with AI-assisted SEO content, Elementor Pro, and Hostinger. No paid ads. My first end-to-end web project.",
+    tags: ["seo", "elementor", "hostinger"],
     href: null,
+  },
+  {
+    type: "major",
+    project: "foundations",
+    status: "shipped",
+    date: "2025",
+    title: "Custom GPTs and Claude Projects",
+    description:
+      "Built configurations on the OpenAI and Anthropic platforms for operations workflows: templates, SOPs, and decision tools. My first serious prompt-engineering work.",
+    tags: ["openai", "anthropic", "prompt-engineering"],
+    href: null,
+  },
+  {
+    type: "minor",
+    project: "foundations",
+    date: "Pre-2025",
+    text: "NinjaTrader scripting, conditional event-driven automation for alerts and real-time triggers. My first exposure to programmatic, event-driven thinking.",
   },
 ];
