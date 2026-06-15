@@ -15,9 +15,28 @@
     {
       "slug": "foundations",
       "label": "Foundations"
+    },
+    {
+      "slug": "stream",
+      "label": "Full Livestream Build"
     }
   ],
   "entries": [
+    {
+      "type": "major",
+      "project": "stream",
+      "status": "in-progress",
+      "date": "Now \u00b7 Jun 2026",
+      "title": "Full Livestream Build",
+      "description": "Designed a complete brand identity around a corporate-horror concept: slick, dark, and editorial, with a near-black green palette, buried brass accents, and type set in Bodoni Moda, Cinzel, and IBM Plex Mono. Built a suite of animated browser-based overlays at 1920x1080 as OBS browser sources, in two interchangeable scene systems, editorial and facility, covering Starting Soon and Be Right Back states. The facility scenes include ambient motion: a drifting schematic ring, a blinking status light, and a standby bar. More scenes, automation, and full stream integration are in progress.",
+      "tags": [
+        "brand design",
+        "HTML/CSS/JS",
+        "motion design",
+        "OBS"
+      ],
+      "href": null
+    },
     {
       "type": "minor",
       "project": "site",
