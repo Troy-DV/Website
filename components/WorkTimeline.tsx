@@ -24,8 +24,15 @@ export default function WorkTimeline({ projects, entries }: Props) {
   const labelFor = (slug: string) =>
     projects.find((p) => p.slug === slug)?.label ?? slug;
 
+  // "All" keeps the original newest-first order. A single-project view sorts
+  // majors before minors; the sort is stable, so each group keeps its original
+  // relative order.
   const filtered =
-    active === ALL ? entries : entries.filter((e) => e.project === active);
+    active === ALL
+      ? entries
+      : entries
+          .filter((e) => e.project === active)
+          .sort((a, b) => (a.type === b.type ? 0 : a.type === "major" ? -1 : 1));
 
   const count = filtered.length;
   const statusText =
