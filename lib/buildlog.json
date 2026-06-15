@@ -1,19 +1,41 @@
 {
   "projects": [
-    { "slug": "site", "label": "troydevries.com" },
-    { "slug": "ignite", "label": "Ignite" },
-    { "slug": "pageone", "label": "Page one" },
-    { "slug": "foundations", "label": "Foundations" }
+    {
+      "slug": "site",
+      "label": "troydevries.com"
+    },
+    {
+      "slug": "ignite",
+      "label": "Ignite"
+    },
+    {
+      "slug": "pageone",
+      "label": "Page one"
+    },
+    {
+      "slug": "foundations",
+      "label": "Foundations"
+    }
   ],
   "entries": [
+    {
+      "type": "minor",
+      "project": "site",
+      "date": "Jun 2026",
+      "text": "Tested the automated build log pipeline end to end. A Slack message triggers a Python script that reads and writes lib/buildlog.json via the GitHub Contents API, commits the change, and Vercel redeploys the site automatically."
+    },
     {
       "type": "major",
       "project": "site",
       "status": "in-progress",
-      "date": "Now · Jun 2026",
+      "date": "Now \u00b7 Jun 2026",
       "title": "troydevries.com",
       "description": "Built from scratch with Claude Code, directed and refined by me. I set up the whole stack myself: a Next.js app in TypeScript and Tailwind, on GitHub, deployed to Vercel with continuous deployment, on a domain whose DNS I configured. The design started as a spec I shaped, then I directed the build, reviewed the output, and fixed what was off. This page is part of it: an interactive build log where each project is a thread you can pull.",
-      "tags": ["next.js", "tailwind", "vercel"],
+      "tags": [
+        "next.js",
+        "tailwind",
+        "vercel"
+      ],
       "href": null
     },
     {
@@ -47,7 +69,12 @@
       "date": "May 2026",
       "title": "Ignite",
       "description": "An autonomous agent I built to take research and repetitive work off my plate. It runs on Railway with Slack as the interface, routes across models through OpenRouter to keep costs in check, and uses a private Obsidian vault synced to GitHub as its memory. Every morning a cron job runs a batch of web research and drops the results in Slack.",
-      "tags": ["railway", "slack", "openrouter", "tavily"],
+      "tags": [
+        "railway",
+        "slack",
+        "openrouter",
+        "tavily"
+      ],
       "href": null
     },
     {
@@ -93,7 +120,11 @@
       "date": "2025",
       "title": "Page one, no agency",
       "description": "Ranked a local business site to the first page of Google with AI-assisted SEO content, Elementor Pro, and Hostinger. No paid ads. My first end-to-end web project.",
-      "tags": ["seo", "elementor", "hostinger"],
+      "tags": [
+        "seo",
+        "elementor",
+        "hostinger"
+      ],
       "href": null
     },
     {
@@ -103,7 +134,11 @@
       "date": "2025",
       "title": "Custom GPTs and Claude Projects",
       "description": "Built configurations on the OpenAI and Anthropic platforms for operations workflows: templates, SOPs, and decision tools. My first serious prompt-engineering work.",
-      "tags": ["openai", "anthropic", "prompt-engineering"],
+      "tags": [
+        "openai",
+        "anthropic",
+        "prompt-engineering"
+      ],
       "href": null
     },
     {
