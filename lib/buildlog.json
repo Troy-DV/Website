@@ -23,21 +23,10 @@
   ],
   "entries": [
     {
-      "type": "major",
+      "type": "minor",
       "project": "stream",
-      "status": "in-progress",
       "date": "Jun 2026",
-      "title": "Texas Chainsaw Manager: Alert System",
-      "description": "Built a complete alert overlay system as a single HTML, CSS, and JavaScript file running as an OBS browser source, covering new follower, subscriber, first-time chatter, and a custom channel-point redemption, each with distinct motion design. Integrated with Streamer.bot over WebSocket so the overlay subscribes directly to Twitch events and custom broadcasts, with C# actions emitting structured payloads. Completed the vector logo and finalized the brand system so every asset draws from one consistent palette, type stack, and voice. Debugged a non-firing event pipeline by moving from raw broadcasts to an event-subscription model, and solved OBS browser-source caching with file versioning.",
-      "tags": [
-        "brand design",
-        "HTML/CSS/JS",
-        "motion design",
-        "OBS",
-        "Streamer.bot",
-        "C#"
-      ],
-      "href": null
+      "text": "Built a complete alert overlay system as a single HTML, CSS, and JavaScript file running as an OBS browser source, covering new follower, subscriber, first-time chatter, and a custom channel-point redemption, each with distinct motion design. Integrated with Streamer.bot over WebSocket so the overlay subscribes directly to live events and custom broadcasts, with C# actions emitting structured payloads. Finalized the brand system so every asset draws from one consistent palette, type stack, and voice. Debugged a non-firing event pipeline by moving from raw broadcasts to an event-subscription model, and solved OBS browser-source caching with file versioning."
     },
     {
       "type": "major",
