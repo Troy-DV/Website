@@ -19,9 +19,27 @@
     {
       "slug": "stream",
       "label": "Full Livestream Build"
+    },
+    {
+      "slug": "dashboard",
+      "label": "Dashboard"
     }
   ],
   "entries": [
+    {
+      "type": "major",
+      "project": "dashboard",
+      "status": "in-progress",
+      "date": "Now \u00b7 Jun 2026",
+      "title": "Project Dashboard",
+      "description": "Built a desktop command center with Nextron and Electron that reads my local project notes from disk and renders them as live status cards. It parses each note's frontmatter, groups projects by status, and offers list, board, and card layouts plus a per-project detail view. The whole thing is themeable and remembers my settings between sessions.",
+      "tags": [
+        "Electron",
+        "Nextron",
+        "TypeScript"
+      ],
+      "href": null
+    },
     {
       "type": "minor",
       "project": "stream",
