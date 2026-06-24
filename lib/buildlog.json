@@ -27,6 +27,18 @@
   ],
   "entries": [
     {
+      "type": "minor",
+      "project": "site",
+      "date": "Now \u00b7 Jun 2026",
+      "text": "Planning a night mode toggle for the site."
+    },
+    {
+      "type": "minor",
+      "project": "site",
+      "date": "Now \u00b7 Jun 2026",
+      "text": "Planning support for images in build log entries."
+    },
+    {
       "type": "major",
       "project": "dashboard",
       "status": "in-progress",
