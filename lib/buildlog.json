@@ -23,9 +23,27 @@
     {
       "slug": "dashboard",
       "label": "Dashboard"
+    },
+    {
+      "slug": "product-site",
+      "label": "Product Site"
     }
   ],
   "entries": [
+    {
+      "type": "major",
+      "project": "product-site",
+      "status": "in-progress",
+      "date": "Now \u00b7 Jun 2026",
+      "title": "Product Marketing Site",
+      "description": "Built a multi-page product marketing site with Next.js and the App Router. Designed a token-based design system in Tailwind v4 covering the palette, type scale, and three typefaces, plus a reusable component library: a custom SVG logo with light, dark, and icon variants, a global nav and footer, and a set of editorial content sections. Built a filterable product catalog grouped by category with a featured-item layout, an accessible detail modal using the native dialog element, and client-side routing across the home, catalog, and process pages. Set it up as a static export for edge hosting.",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind"
+      ],
+      "href": null
+    },
     {
       "type": "minor",
       "project": "site",
