@@ -32,6 +32,12 @@
   "entries": [
     {
       "type": "minor",
+      "project": "product-site",
+      "date": "Jun 2026",
+      "text": "Built a two-step request configurator that adapts its fields to the selected tool, including a version selector for tools that ship in more than one format, and submits through a hosted form service with an inline confirmation on success."
+    },
+    {
+      "type": "minor",
       "project": "dashboard",
       "date": "Jun 2026",
       "text": "Added a tagged notes view to the Project Dashboard detail pane that parses Question, Insight, Todo, and Revisit lines from each project note and renders them as color-coded entries, and fixed title rendering to use a project's display name when one is set."
