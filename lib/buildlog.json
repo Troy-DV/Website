@@ -31,6 +31,12 @@
   ],
   "entries": [
     {
+      "type": "minor",
+      "project": "dashboard",
+      "date": "Jun 2026",
+      "text": "Added a tagged notes view to the Project Dashboard detail pane that parses Question, Insight, Todo, and Revisit lines from each project note and renders them as color-coded entries, and fixed title rendering to use a project's display name when one is set."
+    },
+    {
       "type": "major",
       "project": "product-site",
       "status": "in-progress",
