@@ -35,6 +35,22 @@
   ],
   "entries": [
     {
+      "type": "major",
+      "project": "stream",
+      "status": "shipped",
+      "date": "Jul 2026",
+      "title": "Overlay system on a local websocket",
+      "description": "Built the overlay layer for the stream as a set of self-contained HTML pages loaded as browser sources, all driven by a local websocket from the automation runtime. Alerts, a redemption counter, a live standings board, an animated channel ident, a challenge checklist, and a reusable border frame all share one message contract. The hard part was the wire format: the JSON broadcast method wrapped payloads in nested envelopes the overlays could not parse, so moved everything to string broadcast and wrote an unwrap function that walks nested envelopes and parses string-valued data fields. Counters persist in local storage with a self-check log, added after an external process kept silently resetting state mid-session.",
+      "tags": [
+        "WebSocket",
+        "OBS",
+        "HTML",
+        "C#",
+        "State persistence"
+      ],
+      "href": null
+    },
+    {
       "type": "minor",
       "project": "tools",
       "date": "Jul 2026",
