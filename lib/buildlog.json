@@ -27,9 +27,29 @@
     {
       "slug": "product-site",
       "label": "Product Site"
+    },
+    {
+      "slug": "tools",
+      "label": "Spreadsheet Tools"
     }
   ],
   "entries": [
+    {
+      "type": "major",
+      "project": "tools",
+      "status": "shipped",
+      "date": "Jul 2026",
+      "title": "A production and QA pipeline for spreadsheet tools",
+      "description": "Shipped four spreadsheet tools this month, each a scored diagnostic that turns messy inputs into a ranked verdict and a fix first list. Every build clears the same gate before it ships: a static text scrub for banned characters and functions, a full recalculation pass that has to return zero formula errors, an independent Python mirror that recomputes every value and compares it against the workbook, and a pixel level overflow audit using real font metrics to catch text that clips in Excel but not in the renderer. The audit has caught real ship blockers more than once. Listing images render from HTML through WeasyPrint so the visual system stays identical across the catalog.",
+      "tags": [
+        "Python",
+        "openpyxl",
+        "Excel",
+        "QA automation",
+        "WeasyPrint"
+      ],
+      "href": null
+    },
     {
       "type": "minor",
       "project": "product-site",
