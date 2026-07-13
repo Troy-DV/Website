@@ -38,6 +38,12 @@
       "type": "minor",
       "project": "tools",
       "date": "Jul 2026",
+      "text": "Rebuilt the newer tools on classic functions only, no dynamic arrays, so they run in Excel 2010 and up, Excel for Mac, and Google Sheets instead of 365 only."
+    },
+    {
+      "type": "minor",
+      "project": "tools",
+      "date": "Jul 2026",
       "text": "Extracted the design system out of the shipped workbooks into a portable brand guide with CSS custom properties and Tailwind theme tokens, so new products and web surfaces stay identical without re-specifying anything."
     },
     {
