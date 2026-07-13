@@ -35,6 +35,12 @@
   ],
   "entries": [
     {
+      "type": "minor",
+      "project": "stream",
+      "date": "Jul 2026",
+      "text": "Wired a one button clip takeover with clips normalized to 1920x1080 H.264 and AAC, played as native media sources and fired from a Stream Deck multi action that hides, shows, waits the clip length, then hides again so nothing auto plays on the next scene switch."
+    },
+    {
       "type": "major",
       "project": "stream",
       "status": "shipped",
